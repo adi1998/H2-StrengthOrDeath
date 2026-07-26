@@ -48,6 +48,12 @@ modutil.mod.Path.Wrap("RandomBountyProcessMetaUpgrades", function (base, sum, re
     local retVal = base(sum, remaining, index, budget, candidates, cardState)
     if sum == budget and selectedCard then
         print("inserting selected card", selectedCard, budget)
+        game.GameState.MetaUpgradeState[selectedCard].Visible = true
+        if selectedCard == "LastStand" then
+            game.GameState.MetaUpgradeCardLayout[3][2] = "LastStand"
+        else
+            game.GameState.MetaUpgradeCardLayout[5][3] = "LowHealthBonus"
+        end
         table.insert(candidates, selectedCard)
         table.insert(cardState, true)
     end
