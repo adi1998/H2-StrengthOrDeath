@@ -54,6 +54,9 @@ modutil.mod.Path.Wrap("RandomBountyProcessMetaUpgrades", function (base, sum, re
         else
             game.GameState.MetaUpgradeCardLayout[5][3] = "LowHealthBonus"
         end
+        while #cardState < #candidates do
+            table.insert(cardState, false)
+        end
         table.insert(candidates, selectedCard)
         table.insert(cardState, true)
     end
