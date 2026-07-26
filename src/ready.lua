@@ -47,13 +47,15 @@ modutil.mod.Path.Wrap("RandomBountyProcessMetaUpgrades", function (base, sum, re
     end
     local retVal = base(sum, remaining, index, budget, candidates, cardState)
     if sum == budget and selectedCard then
-        print("inserting selected card", selectedCard, budget)
-        game.GameState.MetaUpgradeState[selectedCard].Visible = true
-        if selectedCard == "LastStand" then
-            game.GameState.MetaUpgradeCardLayout[3][2] = "LastStand"
-        else
-            game.GameState.MetaUpgradeCardLayout[5][3] = "LowHealthBonus"
+        if rom.mods["ReadEmAndWeep-Flip_the_Arcana_Mod"] then
+            game.GameState.MetaUpgradeState[selectedCard].Visible = true
+            if selectedCard == "LastStand" then
+                game.GameState.MetaUpgradeCardLayout[3][2] = "LastStand"
+            else
+                game.GameState.MetaUpgradeCardLayout[5][3] = "LowHealthBonus"
+            end
         end
+        print("inserting selected card", selectedCard, budget)
         while #cardState < #candidates do
             table.insert(cardState, false)
         end
