@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- remove late loading
+
 ## [1.0.0] - 2026-07-26
 
 - First version of the mod!

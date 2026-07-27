@@ -41,6 +41,7 @@ public.config = config -- so other mods can access our config
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
+    import 'ready.lua'
 end
 
 local function on_reload()
@@ -49,7 +50,6 @@ local function on_reload()
 end
 
 local function on_ready_late()
-    import 'ready.lua'
 end
 
 local function on_reload_late()
