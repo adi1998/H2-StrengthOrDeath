@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "zerp"
 name = "StrengthOrDeath"
-versionNumber = "1.0.0"
+versionNumber = "1.0.1"
 description = "Hades II mod which forces either the Strength or Death arcana to appear during the Chaos Above/Below trials"
 websiteUrl = "https://github.com/adi1998/H2-StrengthOrDeath"
 containsNsfwContent = false
